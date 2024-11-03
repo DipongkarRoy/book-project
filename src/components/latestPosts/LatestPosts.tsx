@@ -1,4 +1,5 @@
 import { TBook } from "@/types";
+import PostCard from "../ui/PostCard";
 
 const LatestPosts = ({ posts }: { posts: TBook[] }) => {
   return (
@@ -10,11 +11,10 @@ const LatestPosts = ({ posts }: { posts: TBook[] }) => {
         Discover, review, and rate your favorite books. Join a community of book
         lovers and share your reading experiences.
       </p>
-      <div className="grid grid-cols-3 my-12 gap-8">
-        {/* ---------------data provideted */}
-        <h1 className="text-4xl text-center">
-          Latest <span className="text-fuchsia-800">Posts :{posts.length}</span>
-        </h1>
+      <div className="grid grid-cols-3 my-12 gap-8 ">
+        {posts.slice(0, 6).map((post) => (
+          <PostCard key={post.id} post={post}></PostCard>
+        ))}
       </div>
     </div>
   );

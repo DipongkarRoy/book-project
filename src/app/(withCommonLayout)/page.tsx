@@ -5,7 +5,7 @@ import getAllPosts from "@/services/postServices";
 
 
 const page = async () => {
-  const posts = await getAllPosts();
+  const posts = await getAllPosts('ssr');
   //console.log(posts);
   return (
     <div>

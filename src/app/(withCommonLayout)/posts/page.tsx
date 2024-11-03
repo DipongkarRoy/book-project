@@ -1,10 +1,26 @@
+import PostCard from "@/components/ui/PostCard";
+import getAllPosts from "@/services/postServices";
+import { TBook } from "@/types";
 
 
-const AllPostPages = () => {
+const AllPostPages = async() => {
+    const posts = await getAllPosts("ssr");
+
     return (
-        <div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, nesciunt eligendi ab voluptas molestiae nobis nostrum earum? Enim, eveniet nostrum delectus cum aut deleniti quibusdam quo quos neque. Aliquid, blanditiis.</p>
-        </div>
+        <div className="my-10 w-[90%] mx-auto">
+      <h1 className="text-4xl text-center">
+        Latest <span className="text-fuchsia-800">Posts</span>
+      </h1>
+      <p className="text-gray-400 text-center italic w-2/4 mx-auto mt-2">
+        Discover, review, and rate your favorite books. Join a community of book
+        lovers and share your reading experiences.
+      </p>
+      <div className="grid grid-cols-3 my-12 gap-8 ">
+        {posts.map((post:TBook) => (
+          <PostCard key={post.id} post={post}></PostCard>
+        ))}
+      </div>
+    </div>
     );
 };
 
