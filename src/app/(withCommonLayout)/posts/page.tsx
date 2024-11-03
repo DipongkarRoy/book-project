@@ -1,10 +1,11 @@
 import PostCard from "@/components/ui/PostCard";
-import getAllPosts from "@/services/postServices";
+import { getAllPosts } from "@/services/postServices";
+
 import { TBook } from "@/types";
 
 
 const AllPostPages = async() => {
-    const posts = await getAllPosts("ssr");
+    const posts = await getAllPosts("ssr" ,true);
 
     return (
         <div className="my-10 w-[90%] mx-auto">

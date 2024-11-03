@@ -1,11 +1,12 @@
 import Banner from "@/components/banner/Banner";
 import LatestPosts from "@/components/latestPosts/LatestPosts";
-import getAllPosts from "@/services/postServices";
+import { getAllPosts } from "@/services/postServices";
+
 
 
 
 const page = async () => {
-  const posts = await getAllPosts('ssr');
+  const posts = await getAllPosts('isr');
   //console.log(posts);
   return (
     <div>
