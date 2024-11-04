@@ -1,10 +1,14 @@
+import { getComments } from "@/services/comments";
 import { TBook } from "@/types";
 import Image from "next/image";
+import Comments from "./Comments";
 
+const PostCardDetails = async ({ post }: { post: TBook }) => {
+  const comments = await getComments(post.id);
+  
 
-const PostCardDetails = async({post}:{post:TBook}) => {
-    return (
-        <div className="card card-side bg-base-100 shadow-xl">
+  return (
+    <div className="card card-side bg-base-100 shadow-xl">
       <figure>
         <Image src={post.image} alt="book image" width={300} height={300} />
       </figure>
@@ -14,9 +18,10 @@ const PostCardDetails = async({post}:{post:TBook}) => {
           <div className="badge p-4 bg-fuchsia-500">{post.category}</div>
         </div>
         <p>{post.description}</p>
+        <Comments comments={comments} />
       </div>
     </div>
-    );
+  );
 };
 
 export default PostCardDetails;

@@ -63,26 +63,13 @@
       "category": "Fantasy",
       "image": "https://images.moviesanywhere.com/143cdb987186a1c8f94d4f18de211216/fdea56fa-2703-47c1-8da8-70fc5382e1ea.jpg"
     },
+    
     {
       "id": "10",
-      "name": "test",
-      "description": "abc",
-      "category": "sifi",
-      "image": "https://m.media-amazon.com/images/I/61w3SOnmcdL._AC_SL1140_.jpg"
-    },
-    {
-      "id": "11",
-      "name": "test",
-      "description": "abc",
-      "category": "sifi",
-      "image": "https://m.media-amazon.com/images/I/61w3SOnmcdL._AC_SL1140_.jpg"
-    },
-    {
-      "id": "12",
-      "name": "test",
-      "description": "abc",
-      "category": "sifi",
-      "image": "https://m.media-amazon.com/images/I/61w3SOnmcdL._AC_SL1140_.jpg"
+      "name": "Dipongkar Roy",
+      "description": "delta computer science collage ,rangpur",
+      "category": "Mern stack developer",
+      "image": "https://www.jdandj.com/uploads/8/0/0/8/80083458/s611371146998849390_p82_i2_w1600.jpeg"
     }
   ],
   "comments": [

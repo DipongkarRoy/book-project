@@ -1,4 +1,5 @@
 import { delay } from "@/components/utils/delay";
+import { TBook } from "@/types";
 
 export const getAllPosts = async (type?: string, wait=false) => {
   let fetchOptions = {};
@@ -42,4 +43,20 @@ export const getPost = async (id: string, wait=false) => {
   }
   return res.json();
 };
+
+export const createPostData = async (post: TBook) => {
+  const res = await fetch (`${process.env.NEXT_PUBLIC_BASE_URL}/posts`,{
+    method: "POST",
+    headers:{
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(post),
+    cache:'no-cache'
+  })
+  if (!res.ok) {
+    throw new Error(`Failed to create post.`);
+  }
+
+  return res.json();
+}
 

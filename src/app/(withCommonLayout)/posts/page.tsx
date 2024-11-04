@@ -16,7 +16,7 @@ const AllPostPages = async() => {
         Discover, review, and rate your favorite books. Join a community of book
         lovers and share your reading experiences.
       </p>
-      <div className="grid grid-cols-3 my-12 gap-8 ">
+      <div className='grid grid-cols-1 md:grid-cols-2 mt-5 lg:grid-cols-3 gap-4 md:px-4 mb-6'>
         {posts.map((post:TBook) => (
           <PostCard key={post.id} post={post}></PostCard>
         ))}
